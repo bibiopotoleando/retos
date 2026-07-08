@@ -1,40 +1,307 @@
-<!DOCTYPE html>
+html_content = """<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guía de Retos del Chat</title>
+<title>Guía de Estados del Chat / Estados do Chat</title>
 
 <style>
-  body {
-    margin: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: linear-gradient(180deg, #fefce8 0%, #fef3c7 45%, #ecfccb 100%);
-    color: #3f2f24;
-    line-height: 1.7;
-  }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(180deg, #eef2ff 0%, #fae8ff 50%, #ecfccb 100%);
+  color: #312e81;
+  line-height: 1.7;
+}
 
-  header {
-    text-align: center;
-    padding: 55px 20px 35px;
-    background: #fde68a;
-    border-bottom: 6px solid #f59e0b;
-  }
+header {
+  text-align: center;
+  padding: 55px 20px 35px;
+  background: #ddd6fe;
+  border-bottom: 6px solid #a78bfa;
+}
 
-  header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-  }
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
 
-  header p {
-    max-width: 780px;
-    margin: 14px auto 0;
-    font-size: 1.15rem;
-  }
+header p {
+  max-width: 780px;
+  margin: 14px auto 0;
+  font-size: 1.15rem;
+}
 
-  main {
-    max-width: 960px;
-    margin: 32px auto;
+main {
+  max-width: 960px;
+  margin: 32px auto;
+  padding: 0 20px 60px;
+}
+
+section {
+  background: rgba(250, 245, 255, 0.96);
+  border: 2px solid #c4b5fd;
+  border-radius: 24px;
+  padding: 26px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 22px rgba(60, 40, 120, 0.12);
+}
+
+h2 {
+  margin-top: 0;
+  color: #6d28d9;
+  font-size: 1.55rem;
+}
+
+code {
+  background: #ede9fe;
+  color: #4c1d95;
+  padding: 3px 8px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.estado {
+  background: #ffffff;
+  border-left: 7px solid #8b5cf6;
+  border-radius: 16px;
+  padding: 16px;
+  margin: 14px 0;
+}
+
+.estado strong {
+  color: #581c87;
+  font-size: 1.08rem;
+}
+
+.box {
+  background: #f7fee7;
+  border: 2px solid #bef264;
+  border-radius: 18px;
+  padding: 16px;
+  margin-top: 14px;
+  color: #365314;
+}
+
+.warning {
+  background: #fff7ed;
+  border: 2px solid #fdba74;
+  border-radius: 18px;
+  padding: 16px;
+  margin-top: 14px;
+  color: #7c2d12;
+}
+
+/* 🔗 LINKS */
+.links {
+  background: rgba(120,160,255,0.08);
+  border: 2px solid rgba(120,160,255,0.4);
+  border-radius: 14px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.links p {
+  margin-bottom: 14px;
+}
+
+.links a {
+  color: #5c7cff;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+footer {
+  text-align: center;
+  padding: 35px 20px;
+  color: #581c87;
+  font-size: 1.05rem;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>📌 Guía de Estados del Chat</h1>
+<p>
+Usa los estados para decir qué estás haciendo durante el directo:
+estudiar, opositar, leer, teletrabajar, apoyar o tener el stream de fondo ✨
+</p>
+</header>
+
+<main>
+
+<div class="box" style="border-left: 7px solid #3b82f6; background: rgba(59, 130, 246, 0.05); margin-bottom: 24px; padding: 20px; border-radius: 20px; color: #1e3a8a; border-color: #93c5fd;">
+  💙 <strong>Nota sobre o idioma / Nota bilingüe:</strong> 
+  O bot entende perfectamente cando lle falas en galego. Usa comandos como <code>!infoestadosgal</code> e o bot responderache na nosa lingua con moito agarimo ✨.
+</div>
+
+<section>
+  <h2>✨ ¿Cómo funcionan los estados?</h2>
+  <div class="card" style="background: rgba(255,255,255,0.5); padding: 15px; border-radius: 12px; margin-bottom: 20px;">
+    <p>El sistema de estados sirve para contabilizar tu tiempo productivo en la sala de coestudio. Al usar estos comandos, el bot registra cuándo empiezas, cuándo pausas y cuándo terminas tu sesión, ¡sumando ese tiempo a tu perfil y al ranking de la comunidad! 📝</p>
+  </div>
+  
+  <div class="box" style="margin-bottom: 24px;">
+    💡 <strong>Consejo:</strong> Mantén tu estado actualizado para motivar al resto del chat y ganar precisión en tu contador personal.
+  </div>
+</section>
+
+<section>
+  <h2>🎯 Estados de Concentración</h2>
+  <p>Usa uno de estos comandos para iniciar tu contador de tiempo productivo.</p>
+  
+  <div class="estado">
+    <strong>!estudiando 📚</strong>
+    <p>Inicia tu contador general de estudio.</p>
+  </div>
+
+  <div class="estado">
+    <strong>!opositando ⚖️</strong>
+    <p>Inicia tu contador centrado en preparar temario y leyes para tu plaza.</p>
+  </div>
+  
+  <div class="estado">
+    <strong>!leyendo 📖</strong>
+    <p>Inicia tu contador si tu misión de hoy es leer, repasar o investigar tranquilamente.</p>
+  </div>
+  
+  <div class="estado">
+    <strong>!teletrabajando 💻</strong>
+    <p>Inicia tu contador si nos acompañas sacando adelante tus tareas del trabajo.</p>
+  </div>
+</section>
+
+<section>
+  <h2>☕ Estados de Acompañamiento</h2>
+  <p>Si no estás en una sesión estricta pero quieres sumar presencia, usa estos comandos.</p>
+  
+  <div class="estado" style="border-left-color: #f59e0b;">
+    <strong>!defondo ☁️</strong>
+    <p>Para avisar de que estás por la sala haciendo otras cosas pero escuchándonos de fondo.</p>
+  </div>
+
+  <div class="estado" style="border-left-color: #f59e0b;">
+    <strong>!apoyando 💚</strong>
+    <p>Para dejar constancia de que estás animando al grupo aunque hoy no te toque hincar codos.</p>
+  </div>
+</section>
+
+<section>
+  <h2>⏸️ Control de Tiempo y Descansos</h2>
+  
+  <div class="estado" style="border-left-color: #3b82f6;">
+    <strong>!pausa ⏱️</strong>
+    <p>Congela tu tiempo actual cuando vayas a estirar, beber agua o descansar. ¡El reloj no sumará minutos hasta que vuelvas!</p>
+  </div>
+  
+  <div class="estado" style="border-left-color: #3b82f6;">
+    <strong>!vuelta 🔄</strong>
+    <p>Reactiva tu contador después de una pausa para seguir sumando tiempo.</p>
+  </div>
+
+  <div class="estado" style="border-left-color: #ef4444;">
+    <strong>!paro / !parar / !fin 🛑</strong>
+    <p>Cierra definitivamente tu sesión de hoy. El bot guardará todo el tiempo que hayas acumulado en esta jornada.</p>
+  </div>
+</section>
+
+<section>
+  <h2>🏆 Consultas de Tiempo</h2>
+  
+  <div class="estado" style="border-left-color: #10b981;">
+    <strong>!presente 📊</strong>
+    <p>El bot te dirá por el chat tu estado actual y cuánto tiempo llevas acumulado en la sesión de hoy.</p>
+  </div>
+  
+  <div class="estado" style="border-left-color: #10b981;">
+    <strong>!ranking 🏅</strong>
+    <p>Muestra la clasificación de los usuarios que más horas han acumulado estudiando en el canal.</p>
+  </div>
+  
+  <div class="estado" style="border-left-color: #10b981;">
+    <strong>!infoestados / !infoestadosgal ℹ️</strong>
+    <p>Un recordatorio rápido en el chat con los comandos básicos de esta guía.</p>
+  </div>
+</section>
+
+<section>
+  <h2>🔗 Guías relacionadas</h2>
+
+  <div class="links">
+
+    <p>🌳 Bosque virtual:<br>
+      <a href="https://bibiopotoleando.github.io/bosque-visual/guia_bosque.html">
+        https://bibiopotoleando.github.io/bosque-visual/guia_bosque.html
+      </a>
+    </p>
+
+    <p>📝 Tareas:<br>
+      <a href="https://bibiopotoleando.github.io/guia-tareas/guia_tareas.html">
+        https://bibiopotoleando.github.io/guia-tareas/guia_tareas.html
+      </a>
+    </p>
+
+    <p>🎁 Canjeos:<br>
+      <a href="https://bibiopotoleando.github.io/guia-canjeos/guia_canjeos.html">
+        https://bibiopotoleando.github.io/guia-canjeos/guia_canjeos.html
+      </a>
+    </p>
+
+    <p>📌 Estados:<br>
+      <a href="https://bibiopotoleando.github.io/estados-y-bebidas/estados.html">
+        https://bibiopotoleando.github.io/estados-y-bebidas/estados.html
+      </a>
+    </p>
+
+    <p>☕ Bebidas:<br>
+      <a href="https://bibiopotoleando.github.io/estados-y-bebidas/bebidas.html">
+        https://bibiopotoleando.github.io/estados-y-bebidas/bebidas.html
+      </a>
+    </p>
+
+    <p>🎯 Retos:<br>
+      <a href="https://bibiopotoleando.github.io/retos/retos.html">
+        https://bibiopotoleando.github.io/retos/retos.html
+      </a>
+    </p>
+
+    <p>🎮 Minijuego:<br>
+      <a href="https://bibiopotoleando.github.io/minijuego-guia/index.html">
+        https://bibiopotoleando.github.io/minijuego-guia/index.html
+      </a>
+    </p>
+
+    <p>📦 Material:<br>
+      <a href="https://bibiopotoleando.github.io/estados-y-bebidas/material.html">
+        https://bibiopotoleando.github.io/estados-y-bebidas/material.html
+      </a>
+    </p>
+
+    <p>🏅 Insignias:<br>
+      <a href="https://bibiopotoleando.github.io/insignias-visual/guia_insignias.html">
+        https://bibiopotoleando.github.io/insignias-visual/guia_insignias.html
+      </a>
+    </p>
+        
+  </div>
+</section>
+
+</main>
+
+<footer>
+📌 Gracias por compartir tu ratito con el chat ✨
+</footer>
+
+</body>
+</html>
+"""
+
+with open('GITHUB_ESTADOS_FINAL.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print("[file-tag: GITHUB_ESTADOS_FINAL.html]")    margin: 32px auto;
     padding: 0 20px 60px;
   }
 
