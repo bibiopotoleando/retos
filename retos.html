@@ -1,228 +1,287 @@
-html_content = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guía de Estados del Chat / Estados do Chat</title>
+<title>Guía de Retos del Chat</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: linear-gradient(180deg, #eef2ff 0%, #fae8ff 50%, #ecfccb 100%);
-  color: #312e81;
-  line-height: 1.7;
-}
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(180deg, #fefce8 0%, #fef3c7 45%, #ecfccb 100%);
+    color: #3f2f24;
+    line-height: 1.7;
+  }
 
-header {
-  text-align: center;
-  padding: 55px 20px 35px;
-  background: #ddd6fe;
-  border-bottom: 6px solid #a78bfa;
-}
+  header {
+    text-align: center;
+    padding: 55px 20px 35px;
+    background: #fde68a;
+    border-bottom: 6px solid #f59e0b;
+  }
 
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-}
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+  }
 
-header p {
-  max-width: 780px;
-  margin: 14px auto 0;
-  font-size: 1.15rem;
-}
+  header p {
+    max-width: 780px;
+    margin: 14px auto 0;
+    font-size: 1.15rem;
+  }
 
-main {
-  max-width: 960px;
-  margin: 32px auto;
-  padding: 0 20px 60px;
-}
+  main {
+    max-width: 960px;
+    margin: 32px auto;
+    padding: 0 20px 60px;
+  }
 
-section {
-  background: rgba(250, 245, 255, 0.96);
-  border: 2px solid #c4b5fd;
-  border-radius: 24px;
-  padding: 26px;
-  margin-bottom: 24px;
-  box-shadow: 0 8px 22px rgba(60, 40, 120, 0.12);
-}
+  section {
+    background: rgba(255, 250, 240, 0.96);
+    border: 2px solid #fcd34d;
+    border-radius: 24px;
+    padding: 26px;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 22px rgba(120, 80, 30, 0.12);
+  }
 
-h2 {
-  margin-top: 0;
-  color: #6d28d9;
-  font-size: 1.55rem;
-}
+  h2 {
+    margin-top: 0;
+    color: #92400e;
+    font-size: 1.55rem;
+  }
 
-code {
-  background: #ede9fe;
-  color: #4c1d95;
-  padding: 3px 8px;
-  border-radius: 8px;
-  font-weight: bold;
-}
+  code {
+    background: #fef3c7;
+    color: #78350f;
+    padding: 3px 8px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-family: monospace;
+  }
 
-.estado {
-  background: #ffffff;
-  border-left: 7px solid #8b5cf6;
-  border-radius: 16px;
-  padding: 16px;
-  margin: 14px 0;
-}
+  .reto {
+    background: #ffffff;
+    border-left: 7px solid #f59e0b;
+    border-radius: 16px;
+    padding: 16px;
+    margin: 14px 0;
+  }
 
-.estado strong {
-  color: #581c87;
-  font-size: 1.08rem;
-}
+  .reto strong {
+    color: #78350f;
+    font-size: 1.08rem;
+  }
 
-.box {
-  background: #f7fee7;
-  border: 2px solid #bef264;
-  border-radius: 18px;
-  padding: 16px;
-  margin-top: 14px;
-  color: #365314;
-}
+  .box {
+    background: #f7fee7;
+    border: 2px solid #bef264;
+    border-radius: 18px;
+    padding: 16px;
+    margin-top: 14px;
+    color: #365314;
+  }
 
-.warning {
-  background: #fff7ed;
-  border: 2px solid #fdba74;
-  border-radius: 18px;
-  padding: 16px;
-  margin-top: 14px;
-  color: #7c2d12;
-}
+  .warning {
+    background: #fff7ed;
+    border: 2px solid #fdba74;
+    border-radius: 18px;
+    padding: 16px;
+    margin-top: 14px;
+    color: #7c2d12;
+  }
 
-/* 🔗 LINKS */
-.links {
-  background: rgba(120,160,255,0.08);
-  border: 2px solid rgba(120,160,255,0.4);
-  border-radius: 14px;
-  padding: 15px;
-  margin-top: 20px;
-}
+  .links {
+    background: rgba(120,160,255,0.08);
+    border: 2px solid rgba(120,160,255,0.4);
+    border-radius: 14px;
+    padding: 15px;
+    margin-top: 20px;
+  }
 
-.links p {
-  margin-bottom: 14px;
-}
+  .links p {
+    margin-bottom: 14px;
+    margin-top: 0;
+  }
 
-.links a {
-  color: #5c7cff;
-  font-weight: 600;
-  word-break: break-word;
-}
+  .links a {
+    color: #5c7cff;
+    font-weight: 600;
+    word-break: break-word;
+  }
 
-footer {
-  text-align: center;
-  padding: 35px 20px;
-  color: #581c87;
-  font-size: 1.05rem;
-}
+  footer {
+    text-align: center;
+    padding: 35px 20px;
+    color: #78350f;
+    font-size: 1.05rem;
+  }
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>📌 Guía de Estados del Chat</h1>
-<p>
-Usa los estados para decir qué estás haciendo durante el directo:
-estudiar, opositar, leer, teletrabajar, apoyar o tener el stream de fondo ✨
-</p>
+  <h1>🎯 Guía de Retos del Chat</h1>
+  <p>
+    Mini retos personales, rachas, días acumulados y desafíos colectivos para mantener la constancia en tus rutinas de estudio sin perder el toque cozy ✨
+  </p>
 </header>
 
 <main>
 
-<div class="box" style="border-left: 7px solid #3b82f6; background: rgba(59, 130, 246, 0.05); margin-bottom: 24px; padding: 20px; border-radius: 20px; color: #1e3a8a; border-color: #93c5fd;">
-  💙 <strong>Nota sobre o idioma / Nota bilingüe:</strong> 
-  O bot entende perfectamente cando lle falas en galego. Usa comandos como <code>!infoestadosgal</code> e o bot responderache na nosa lingua con moito agarimo ✨.
-</div>
+<section>
+  <h2>🌟 ¿Qué son los retos?</h2>
+  <p>
+    Los retos del chat son pequeñas misiones interactivas pensadas para acompañar tus sesiones de enfoque, incentivar el cuidado de tu cuerpo y construir hábitos sólidos a largo plazo.
+  </p>
+  <p>
+    El sistema divide tu actividad en retos de bienestar personal, dinámicas comunitarias sorpresivas, rachas de asistencia y días de estudio acumulados.
+  </p>
+</section>
 
 <section>
-  <h2>✨ ¿Cómo funcionan los estados?</h2>
-  <div class="card" style="background: rgba(255,255,255,0.5); padding: 15px; border-radius: 12px; margin-bottom: 20px;">
-    <p>El sistema de estados sirve para contabilizar tu tiempo productivo en la sala de coestudio. Al usar estos comandos, el bot registra cuándo empiezas, cuándo pausas y cuándo terminas tu sesión, ¡sumando ese tiempo a tu perfil y al ranking de la comunidad! 📝</p>
+  <h2>🎯 Retos personales</h2>
+  <p>
+    Estas misiones individuales se activan de forma automática para aquellos espectadores que se encuentren en un rol de enfoque (como estudiar, opositar, leer o teletrabajar).
+  </p>
+
+  <div class="reto">
+    <strong><code>!mireto</code></strong>
+    <p>Consulta en el chat tu mini desafío activo del día y revisa tu porcentaje de progreso actual.</p>
   </div>
-  
-  <div class="box" style="margin-bottom: 24px;">
-    💡 <strong>Consejo:</strong> Mantén tu estado actualizado para motivar al resto del chat y ganar precisión en tu contador personal.
+
+  <div class="reto">
+    <strong><code>!rankingretos</code></strong>
+    <p>Despliega la tabla de clasificación diaria con los usuarios que han completado más objetivos de disciplina.</p>
   </div>
 </section>
 
 <section>
-  <h2>🎯 Estados de Concentración</h2>
-  <p>Usa uno de estos comandos para iniciar tu contador de tiempo productivo.</p>
-  
-  <div class="estado">
-    <strong>!estudiando 📚</strong>
-    <p>Inicia tu contador general de estudio.</p>
+  <h2>🧘 Retos de bienestar y autocuidado</h2>
+  <p>Ejecutar estos comandos en tus pausas te permite registrar tus rutinas de salud física directamente en el sistema:</p>
+
+  <div class="reto">
+    <strong><code>!estiro</code></strong>
+    <p>Registra una sesión de estiramientos corporales.</p>
   </div>
 
-  <div class="estado">
-    <strong>!opositando ⚖️</strong>
-    <p>Inicia tu contador centrado en preparar temario y leyes para tu plaza.</p>
+  <div class="reto">
+    <strong><code>!respiro</code></strong>
+    <p>Marca un bloque corto de respiración consciente para oxigenar la mente.</p>
   </div>
-  
-  <div class="estado">
-    <strong>!leyendo 📖</strong>
-    <p>Inicia tu contador si tu misión de hoy es leer, repasar o investigar tranquilamente.</p>
+
+  <div class="reto">
+    <strong><code>!relax</code></strong>
+    <p>Notifica un momento de relajación o desconexión del escritorio.</p>
   </div>
-  
-  <div class="estado">
-    <strong>!teletrabajando 💻</strong>
-    <p>Inicia tu contador si nos acompañas sacando adelante tus tareas del trabajo.</p>
+
+  <div class="reto">
+    <strong><code>!postura</code></strong>
+    <p>Corrige tu posición en la silla y cuida la salud de tu espalda.</p>
+  </div>
+
+  <div class="reto">
+    <strong><code>!parpadeo</code></strong>
+    <p>Realiza descansos visuales breves para evitar la fatiga ocular frente a las pantallas.</p>
+  </div>
+
+  <div class="reto">
+    <strong><code>!piernas</code></strong>
+    <p>Levántate del asiento para activar la circulación de las piernas.</p>
+  </div>
+
+  <div class="reto">
+    <strong><code>!sentadilla</code></strong>
+    <p>Suma actividad física rápida a tus descansos para activar el modo fitness.</p>
+  </div>
+
+  <div class="reto">
+    <strong><code>!vuelta</code></strong>
+    <p>Da un pequeño paseo corto para resetear cuerpo y mente antes del siguiente Pomodoro.</p>
+  </div>
+
+  <div class="box" style="border-left: 5px solid #bef264;">
+    🏅 <strong>Gamificación Activa:</strong> Registrar de forma honesta tus mini retos de cuidado físico suma progreso directo hacia las <strong>Insignias de la Colección Ejercicio</strong> (como tus metas de días acumulados). ¡Haz crecer tu récord y desbloquea medallas exclusivas para presumir en tu álbum web!
   </div>
 </section>
 
 <section>
-  <h2>☕ Estados de Acompañamiento</h2>
-  <p>Si no estás en una sesión estricta pero quieres sumar presencia, usa estos comandos.</p>
-  
-  <div class="estado" style="border-left-color: #f59e0b;">
-    <strong>!defondo ☁️</strong>
-    <p>Para avisar de que estás por la sala haciendo otras cosas pero escuchándonos de fondo.</p>
+  <h2>🔥 Rachas diarias</h2>
+  <p>
+    El medidor de rachas monitoriza cuántas jornadas consecutivas participas activamente en los bloques de estudio o tareas del directo.
+  </p>
+
+  <div class="reto">
+    <strong><code>!miracha</code></strong>
+    <p>Muestra tu racha actual de días seguidos y la última fecha guardada por el bot.</p>
   </div>
 
-  <div class="estado" style="border-left-color: #f59e0b;">
-    <strong>!apoyando 💚</strong>
-    <p>Para dejar constancia de que estás animando al grupo aunque hoy no te toque hincar codos.</p>
+  <div class="box" style="border-left: 5px solid #bef264;">
+    📈 Mantener tu racha activa de forma constante te permite escalar rangos dentro de la comunidad, demostrando tu nivel de compromiso y disciplina en tus planes de estudio diario.
   </div>
 </section>
 
 <section>
-  <h2>⏸️ Control de Tiempo y Descansos</h2>
-  
-  <div class="estado" style="border-left-color: #3b82f6;">
-    <strong>!pausa ⏱️</strong>
-    <p>Congela tu tiempo actual cuando vayas a estirar, beber agua o descansar. ¡El reloj no sumará minutos hasta que vuelvas!</p>
-  </div>
-  
-  <div class="estado" style="border-left-color: #3b82f6;">
-    <strong>!vuelta 🔄</strong>
-    <p>Reactiva tu contador después de una pausa para seguir sumando tiempo.</p>
+  <h2>📅 Días acumulados</h2>
+  <p>
+    Este marcador registra el total histórico de jornadas en las que has compartido tu tiempo de enfoque junto al canal, sin importar si los días han sido seguidos o interrumpidos.
+  </p>
+
+  <div class="reto">
+    <strong><code>!misdías</code></strong>
+    <p>Consulta el total de tus días acumulados históricos, tu nivel de constancia y cuántas jornadas te restan para el próximo hito de estatus.</p>
   </div>
 
-  <div class="estado" style="border-left-color: #ef4444;">
-    <strong>!paro / !parar / !fin 🛑</strong>
-    <p>Cierra definitivamente tu sesión de hoy. El bot guardará todo el tiempo que hayas acumulado en esta jornada.</p>
+  <div class="reto">
+    <strong>Rangos e hitos de estatus disponibles:</strong>
+    <p style="margin: 8px 0;">7 días — 🟢 Semana cumplida</p>
+    <p style="margin: 8px 0;">30 días — 🔵 Modo disciplina</p>
+    <p style="margin: 8px 0;">90 días — 🟣 Constancia seria</p>
+    <p style="margin: 8px 0;">180 días — 🟠 Imparable</p>
+    <p style="margin: 8px 0;">270 días — 🔴 Bestia de estudio</p>
+    <p style="margin: 8px 0;">365 días — 🟡 Leyenda emérita del chat</p>
   </div>
 </section>
 
 <section>
-  <h2>🏆 Consultas de Tiempo</h2>
-  
-  <div class="estado" style="border-left-color: #10b981;">
-    <strong>!presente 📊</strong>
-    <p>El bot te dirá por el chat tu estado actual y cuánto tiempo llevas acumulado en la sesión de hoy.</p>
+  <h2>👥 Retos colectivos cooperativos</h2>
+  <p>
+    Eventos dinámicos en los que el bot desafía de forma conjunta a todas las personas que se encuentren en modo foco en ese instante. El objetivo principal es defender la concentración grupal aguantando sin escribir en el chat mientras el temporizador corre.
+  </p>
+
+  <div class="reto">
+    <strong>Duración del desafío cooperativo:</strong>
+    <p>Sesiones de enfoque absoluto sorpresa de 10, 20, 30 o hasta 60 minutos de silencio.</p>
   </div>
-  
-  <div class="estado" style="border-left-color: #10b981;">
-    <strong>!ranking 🏅</strong>
-    <p>Muestra la clasificación de los usuarios que más horas han acumulado estudiando en el canal.</p>
+
+  <div class="reto">
+    <strong>Condición de victoria:</strong>
+    <p>Si algún usuario inscrito rompe el silencio enviando mensajes al chat general durante el temporizador, el reto comunitario se marchará y fallará para todo el equipo.</p>
   </div>
-  
-  <div class="estado" style="border-left-color: #10b981;">
-    <strong>!infoestados / !infoestadosgal ℹ️</strong>
-    <p>Un recordatorio rápido en el chat con los comandos básicos de esta guía.</p>
+
+  <div class="reto">
+    <strong>Estatus de recompensa:</strong>
+    <p>Completar con éxito estos desafíos grupales incrementa de forma masiva los medidores generales del canal, ayudando a desbloquear las cotizadas <strong>Insignias de la Categoría General</strong>.</p>
+  </div>
+
+  <div class="warning">
+    ⚠️ Los desafíos colectivos son generados de forma totalmente autónoma por el bot como eventos sorpresa. ¡Estate atento a la pantalla para unirte al equipo cuando aparezcan!
+  </div>
+</section>
+
+<section>
+  <h2>📋 Resumen de la caja de herramientas</h2>
+  <p>Interactúa con el sistema de disciplina utilizando cualquiera de los siguientes comandos directos:</p>
+  <div class="box" style="background: rgba(255,255,255,0.4); border: 1px solid #fdba74; color: inherit;">
+    <p><code>!mireto</code> — Consulta tu mini reto activo diario.</p>
+    <p><code>!miracha</code> — Revisa tu racha de jornadas seguidas.</p>
+    <p><code>!misdías</code> — Despliega tu acumulado histórico de estudio.</p>
+    <p><code>!rankingretos</code> — Muestra el top 5 de disciplina del día.</p>
+    <br>
+    <p><code>!estiro</code>, <code>!respiro</code>, <code>!relax</code>, <code>!postura</code>, <code>!parpadeo</code>, <code>!piernas</code>, <code>!sentadilla</code>, <code>!vuelta</code> — Comandos de salud y ergonomía.</p>
   </div>
 </section>
 
@@ -267,7 +326,7 @@ estudiar, opositar, leer, teletrabajar, apoyar o tener el stream de fondo ✨
     <p>📦 Material:<br>
       <a href="https://bibiopotoleando.github.io/estados-y-bebidas/material.html">https://bibiopotoleando.github.io/estados-y-bebidas/material.html</a>
     </p>
-    
+
     <p>👾 Discord:<br>
       <a href="https://bibiopotoleando.github.io/discord/index.html">
         https://bibiopotoleando.github.io/discord/index.html
@@ -279,9 +338,8 @@ estudiar, opositar, leer, teletrabajar, apoyar o tener el stream de fondo ✨
 </main>
 
 <footer>
-📌 Gracias por compartir tu ratito con el chat ✨
+  📌 ¡A sumar horas y retos! ✨
 </footer>
 
 </body>
 </html>
-
